@@ -1,0 +1,54 @@
+/* src/components/ImageCarouselModal.css */
+.carousel-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 20px;
+}
+
+.carousel {
+    width: 90%;
+    max-height: 50vh;
+}
+
+.carousel-wrapper {
+    width: 80vw;
+    height: 70vh;
+    margin: 0 auto;
+    overflow: clip;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 50vh;
+    /* Match the wrapper height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-image {
+    max-width: 60vw;
+    height: 100%;
+    object-fit: scale-down;
+    /* Maintain aspect ratio and fill the container */
+}
+
+/* Optional: Style the carousel navigation arrows */
+/*   .carousel .control-arrow {
+    background: rgba(255, 1, 1, 1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel .control-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+  } */

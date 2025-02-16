@@ -6,6 +6,11 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    {
+      pattern: /(bg|border)-(amber|fuchsia|teal)-(200|500|700)/,
+    },
+  ],
   theme: {
     extend: {
       colors: {
