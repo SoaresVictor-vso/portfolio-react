@@ -1,23 +1,9 @@
 'use client'
 
-import { Metadata } from "next";
 import Logo from "../components/logo";
 import ProjectCard from "../components/projectCard/index";
-import { MouseEventHandler, SetStateAction, useEffect, useState } from 'react'
+import { MouseEventHandler, useState } from 'react'
 import ProjectModal from "../components/projectModal/index";
-
-// export const metadata: Metadata = {
-//   title: "home",
-//   openGraph: {
-//     title: 'Portfólio de Victor Soares',
-//     description: 'Portfólio :)',
-//     images: [
-//       "../assets/images/Duck.jpeg"
-//     ],
-//   },
-//   robots: {}
-// }
-
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,6 +40,8 @@ export default function Home() {
     setIsModalOpen(true);
     setTitle(title)
   }
+
+  const closeModal = () => setIsModalOpen(false)
 
   return (
     <div id="home" className="m-0 p-0 max-w-screen">
@@ -98,7 +86,7 @@ export default function Home() {
 
       <ProjectModal
         isOpen={isModalOpen}
-        onRequestClose={(event: any) => { setIsModalOpen(false) }}
+        onRequestClose={closeModal as MouseEventHandler}
         images={images}
         title={title}
       />

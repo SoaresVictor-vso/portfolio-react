@@ -3,17 +3,15 @@
 import React, { MouseEventHandler } from 'react';
 import Image from 'next/image'
 import { Globe, Github } from '@geist-ui/icons';
-import { Intrinsic } from 'aws-cdk-lib';
-
 
 export default function ProjectCard(props: {
     className: string,
     title: string,
     imageUri: string,
-    children: any,
+    children: string,
     color: string,
     githubUrl?: string,
-    onClick?: Function,
+    onClick: () => void,
     webUrl?: string
 }) {
     const { children, imageUri, title, color } = props;
