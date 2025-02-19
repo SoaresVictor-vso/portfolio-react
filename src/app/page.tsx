@@ -4,6 +4,8 @@ import Logo from "../components/logo";
 import ProjectCard from "../components/projectCard/index";
 import { MouseEventHandler, useState } from 'react'
 import ProjectModal from "../components/projectModal/index";
+import { BiData, BiLogoGit, BiLogoNodejs } from "react-icons/bi";
+import { SiFirebase, SiNestjs, SiReact, SiTypescript, SiUnity } from "react-icons/si";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +24,7 @@ export default function Home() {
       {
         name: 'Underclock',
         description: 'Você está na torre de um relógio e precisa escapar! Este é um jogo de scape room, 2D, desenvolvido em 15 dias para uma Game Jam. Com o tema torre e duas semanas, um jogo que a princípio seria composto por vários andares, cada um com um desafio para escapar, se converteu em um único nível, composto por vários andares, e os objetos e pistas contidos em cada um deles é fundamental para resolver o jogo!',
-        imagesUri: ["/images/games/underclock/biblioteca.png","/images/games/underclock/lareira2.png","/images/games/underclock/pergaminho.png","/images/games/underclock/relogio.png","/images/games/underclock/ovinho.png", ],
+        imagesUri: ["/images/games/underclock/biblioteca.png", "/images/games/underclock/lareira2.png", "/images/games/underclock/pergaminho.png", "/images/games/underclock/relogio.png", "/images/games/underclock/ovinho.png",],
         githibUrl: "",
         webUrl: "https://gamejolt.com/games/underclock/570890"
       },
@@ -68,7 +70,6 @@ export default function Home() {
 
   const openModal = (imgs: string[], title: string) => {
     setImages(imgs);
-    console.log(images)
     setIsModalOpen(true);
     setTitle(title)
   }
@@ -83,7 +84,7 @@ export default function Home() {
           <Logo width={200} height={200} className="mx-auto " />
           <div className="">
             <h1 className="my-10 lg:mt-14 text-4xl text-center font-light">Olá,</h1>
-            <a href="#victor" className="text-xl lg:text-2xl text-center font-thin hover:text-amber-500 hover:font-normal">
+            <a href="#about" className="text-xl lg:text-2xl text-center font-thin hover:text-amber-500 hover:font-normal">
               <h1 className="my-2 lg:my-5">Sou Victor Soares</h1>
             </a>
             <a href="#fullstack" className="text-xl lg:text-2xl text-center font-thin hover:text-fuchsia-500 hover:font-normal">
@@ -95,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="fullstack" className="h-min-screen max-w-screen m-0">
+      <div id="fullstack" className="min-h-screen max-w-screen m-0">
         <h1 className="text-center text-xl lg:text-4xl py-10 font-thin text-fuchsia-500">
           Fullstack
         </h1>
@@ -113,8 +114,8 @@ export default function Home() {
           }
         </div>
       </div>
-      <div id="games" className="h-min-screen max-w-screen m-0">
-      <h1 className="text-center text-xl lg:text-4xl py-10 font-thin text-teal-500">
+      <div id="games" className="min-h-screen max-w-screen m-0">
+        <h1 className="text-center text-xl lg:text-4xl py-10 font-thin text-teal-500">
           Games
         </h1>
         <div className="m-0 flex flex-wrap justify-between min-h-screen" >
@@ -131,7 +132,71 @@ export default function Home() {
           }
         </div>
       </div>
-      <div id="victor" className="h-screen bg-amber-500">foo</div>
+      <div id="about" className="min-h-screen max-w-screen m-0 mt-5">
+        <h1 className="text-center text-xl lg:text-4xl py-10 font-thin text-amber-700">
+          Sobre o Desenvolvedor
+        </h1>
+        <div className="m-auto w:11/12 lg:w-3/4  text-lg text-center lg:text-xl font-thin px-10 lg:px-48 ">
+
+          <p className="text-wrap ">
+            Minha trajetória na área de desenvolvimento de software teve início com o objetivo
+            de criar jogos digitais. Desde os primeiros passos na programação, fui motivado pelo
+            interesse em transformar ideias em algo com o que as pessoas poderiam ver, ouvir e interagir.
+          </p>
+
+          <p className="text-wrap pt-5">
+            No entanto, minha curiosidade me levou a explorar outras áreas da tecnologia, o que despertou
+            um grande interesse pelo desenvolvimento web, o que expandiu minha perspectiva
+            e me proporcionou a oportunidade de ingressar profissionalmente no setor, onde venho atuando
+            desde então.
+          </p>
+
+
+        </div>
+
+        <h2 className="mt-24 mb-12 text-center text-lg lg:text-3xl font-thin text-amber-700">
+          Tecnologias
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-10/12 m-auto py-5 font-thin">
+          <div className="flex w-max mx-auto">
+            <BiLogoGit className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Conhecimentos em Git</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <BiLogoNodejs className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Desenvolvedor Fullstack Node Vanila</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <SiFirebase className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Conhecimentos em Firebase</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <BiData className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Conhecimentos em SQL</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <SiNestjs className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Noções em Nest</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <SiReact className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Noções em React</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <SiTypescript className="text-amber-700 text-3xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Noções em Typescript</p>
+          </div>
+          <div className="flex w-max mx-auto">
+            <SiUnity className="text-amber-700 text-4xl" />
+            <p className="text-xl ms-3 py-auto mx-auto">Desenvolvedor Unity</p>
+          </div>
+          
+
+        </div>
+
+
+      </div>
 
       <ProjectModal
         isOpen={isModalOpen}

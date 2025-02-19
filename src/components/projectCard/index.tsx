@@ -2,7 +2,8 @@
 
 import React, { MouseEventHandler } from 'react';
 import Image from 'next/image'
-import { Globe, Github, Clock } from '@geist-ui/icons';
+import { BiGlobe, BiLogoGithub, BiHourglass } from 'react-icons/bi';
+
 
 export default function ProjectCard(props: {
     className: string,
@@ -17,9 +18,7 @@ export default function ProjectCard(props: {
     const { children, imageUri, title, color } = props;
 
     const className = `mx-10 rounded-lg border-2 overflow-hidden text-zinc-300 border-${color}-700 ${props.className || ""}`
-    console.log(props.children)
-    const iconClassname = `stroke-${color}-700 stroke-2`;
-    // console.log(content?.current?.innerHtml)
+    const iconClassname = `text-${color}-700 text-lg`;
     return (
         <div className={className}>
             <div onClick={props.onClick as MouseEventHandler}>
@@ -46,9 +45,9 @@ export default function ProjectCard(props: {
             </div>
 
             <footer className="px-6 py-4 flex justify-around ">
-                <IconLink url={props.webUrl} icon={Globe} className={iconClassname} />
-                <IconLink url={props.githubUrl} icon={Github} className={iconClassname} />
-                {!(props.webUrl || props.githubUrl) ? <Clock className={iconClassname} /> : ""}
+                <IconLink url={props.webUrl} icon={BiGlobe} className={iconClassname} />
+                <IconLink url={props.githubUrl} icon={BiLogoGithub} className={iconClassname} />
+                {!(props.webUrl || props.githubUrl) ? <BiHourglass className={iconClassname} /> : ""}
             </footer>
         </div>
     );

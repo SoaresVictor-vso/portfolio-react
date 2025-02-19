@@ -6,7 +6,6 @@ import './style.css'
 
 export default function ProjectModal(props: { isOpen: boolean, images: string[], onRequestClose: MouseEventHandler, title: string }) {
     const { isOpen, images, onRequestClose } = props;
-    console.log(images, typeof images, Array.isArray(images), onRequestClose)
     Modal.setAppElement("#home")
     return (
         <Modal className="m-10 p-5 bg-zinc-900 carousel-modal" isOpen={isOpen} >
