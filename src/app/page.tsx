@@ -10,29 +10,61 @@ export default function Home() {
   const [images, setImages] = useState([] as string[]);
   const [title, setTitle] = useState("");
 
-  const projects = [
-    {
-      name: 'Ratio Auream',
-      description: 'Um site que fatora um número em seus fatores primos.',
-      imagesUri: ["/images/ratioauream_ico.png", "/images/ratioauream_home.png", "/images/ratioauream.png"],
-      githibUrl: "https://github.com/SoaresVictor-vso/RatioAuream",
-      webUrl: "https://ratioauream.vercel.app/Fatorar.html"
-    },
-    {
-      name: 'Gerador de Gráficos',
-      description: 'Um projeto web para a geração de gŕaficos simples com base nas entradas do usuário, construído de forma rápida.',
-      imagesUri: ["/images/chartDoubleColumn.png", "/images/chartHome.png"],
-      githibUrl: 'https://github.com/SoaresVictor-vso/charts/tree/master',
-      webUrl: "https://charts-delta-lake.vercel.app/"
-    },
-    {
-      name: 'Rastreamento de Métricas Corporais',
-      description: 'Uma aplicação com foco no registro das métricas corporais e geração de gráficos, ainda em progresso. Obs: o link do github é para a primeira versão do backend, com um banco de dados postgres, a versão atual utiliza Firebase como banco de dados..',
-      imagesUri: ["/images/BodyMeasureGraph.png", "/images/BodyMeasureRegister.png", "/images/BodyMeasureLogin.png"],
-      githibUrl: "https://github.com/SoaresVictor-vso/body-measure",
-      webUrl: "https://body-measure-front.vercel.app/"
-    }
-  ]
+  const projects = {
+    games: [
+      {
+        name: 'Gravnetism',
+        description: 'Gravinetism é um jogo criado em dois dias para uma game jam, em 2020, e posteriormente atualizado, com foco na melhoria dos controles. É um jogo que consiste em ativar/desativar a força gravitacional e a eletromagnética com o objetivo de fazer o elétron chegar ao próton evitando o anti-elétron.',
+        imagesUri: ["/images/games/gravnetism/capa.png", "/images/games/gravnetism/level01.png"],
+        githibUrl: "",
+        webUrl: "https://spdz.itch.io/gravnetism"
+      },
+      {
+        name: 'Underclock',
+        description: 'Você está na torre de um relógio e precisa escapar! Este é um jogo de scape room, 2D, desenvolvido em 15 dias para uma Game Jam. Com o tema torre e duas semanas, um jogo que a princípio seria composto por vários andares, cada um com um desafio para escapar, se converteu em um único nível, composto por vários andares, e os objetos e pistas contidos em cada um deles é fundamental para resolver o jogo!',
+        imagesUri: ["/images/games/underclock/biblioteca.png","/images/games/underclock/lareira2.png","/images/games/underclock/pergaminho.png","/images/games/underclock/relogio.png","/images/games/underclock/ovinho.png", ],
+        githibUrl: "",
+        webUrl: "https://gamejolt.com/games/underclock/570890"
+      },
+      {
+        name: 'Remember',
+        description: 'Um jogo de plataforma, cujo objetivo é coletar todos os fragmentos de memória antes que o anterior se apague de sua mente. Com o tema "Preservar", foi um jogo feito com poucos detalhes e grande simplicidade, com foco em participar, sem grandes inovações. Ele consiste em uma bolinha que coleta fragmentos de cristal e deve chegar ao fim no menor tempo possível.',
+        imagesUri: ["/images/games/remember/shard2.png", "/images/games/remember/capa.png"],
+        githibUrl: "",
+        webUrl: "https://spdz.itch.io/remember"
+      },
+      {
+        name: 'Lighto',
+        description: 'Um jogo de plataforma, 2D, multiplayer, ainda em desenvolvimento. Seu objetivo é reduzir a zero a vida do oponente, usando um ataque básico, e outras 4 habilidades à escolha do jogador.',
+        imagesUri: ["/images/games/lighto/capa.png"],
+        githibUrl: "",
+        webUrl: ""
+      },
+    ],
+    web: [
+      {
+        name: 'Ratio Auream',
+        description: 'Um site que fatora um número em seus fatores primos.',
+        imagesUri: ["/images/ratioauream_ico.png", "/images/ratioauream_home.png", "/images/ratioauream.png"],
+        githibUrl: "https://github.com/SoaresVictor-vso/RatioAuream",
+        webUrl: "https://ratioauream.vercel.app/Fatorar.html"
+      },
+      {
+        name: 'Gerador de Gráficos',
+        description: 'Um projeto web para a geração de gŕaficos simples com base nas entradas do usuário, construído de forma rápida.',
+        imagesUri: ["/images/chartDoubleColumn.png", "/images/chartHome.png"],
+        githibUrl: 'https://github.com/SoaresVictor-vso/charts/tree/master',
+        webUrl: "https://charts-delta-lake.vercel.app/"
+      },
+      {
+        name: 'Rastreamento de Métricas Corporais',
+        description: 'Uma aplicação com foco no registro das métricas corporais e geração de gráficos, ainda em progresso. Obs: o link do github é para a primeira versão do backend, com um banco de dados postgres, a versão atual utiliza Firebase como banco de dados..',
+        imagesUri: ["/images/BodyMeasureGraph.png", "/images/BodyMeasureRegister.png", "/images/BodyMeasureLogin.png"],
+        githibUrl: "https://github.com/SoaresVictor-vso/body-measure",
+        webUrl: "https://body-measure-front.vercel.app/"
+      }
+    ]
+  }
 
   const openModal = (imgs: string[], title: string) => {
     setImages(imgs);
@@ -69,7 +101,7 @@ export default function Home() {
         </h1>
         <div className="m-0 flex flex-wrap justify-between min-h-screen" >
           {
-            projects.map(p => {
+            projects.web.map(p => {
               return (
                 <div key={p.name} className="mx-auto w-80vw sm:mx-0 sm:w-1/2 lg:w-1/3 xl:w-1/4">
                   <ProjectCard className="mt-5 mx-5" color="fuchsia"
@@ -81,7 +113,24 @@ export default function Home() {
           }
         </div>
       </div>
-      <div id="games" className="h-screen bg-teal-500">foo</div>
+      <div id="games" className="h-min-screen max-w-screen m-0">
+      <h1 className="text-center text-xl lg:text-4xl py-10 font-thin text-teal-500">
+          Games
+        </h1>
+        <div className="m-0 flex flex-wrap justify-between min-h-screen" >
+          {
+            projects.games.map(p => {
+              return (
+                <div key={p.name} className="mx-auto w-80vw sm:mx-0 sm:w-1/2 lg:w-1/3 xl:w-1/4">
+                  <ProjectCard className="mt-5 mx-5" color="teal"
+                    title={p.name} imageUri={p.imagesUri[0]} githubUrl={p.githibUrl}
+                    webUrl={p.webUrl} onClick={() => openModal(p.imagesUri, p.name)}>{p.description}</ProjectCard>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
       <div id="victor" className="h-screen bg-amber-500">foo</div>
 
       <ProjectModal

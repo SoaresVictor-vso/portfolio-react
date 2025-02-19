@@ -8,7 +8,7 @@ export default {
   ],
   safelist: [
     {
-      pattern: /(bg|border)-(amber|fuchsia|teal)-(200|500|700)/,
+      pattern: /(bg|border|stroke)-(amber|fuchsia|teal)-(200|500|700)/,
     },
   ],
   theme: {

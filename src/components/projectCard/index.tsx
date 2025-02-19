@@ -2,7 +2,7 @@
 
 import React, { MouseEventHandler } from 'react';
 import Image from 'next/image'
-import { Globe, Github } from '@geist-ui/icons';
+import { Globe, Github, Clock } from '@geist-ui/icons';
 
 export default function ProjectCard(props: {
     className: string,
@@ -18,6 +18,7 @@ export default function ProjectCard(props: {
 
     const className = `mx-10 rounded-lg border-2 overflow-hidden text-zinc-300 border-${color}-700 ${props.className || ""}`
     console.log(props.children)
+    const iconClassname = `stroke-${color}-700 stroke-2`;
     // console.log(content?.current?.innerHtml)
     return (
         <div className={className}>
@@ -30,23 +31,24 @@ export default function ProjectCard(props: {
                 <div className="flex justify-center mx-10 h-80">
                     <Image
                         src={imageUri}
-                        alt="A duck logo"
+                        alt="Uma representação visual do projeto"
                         className="object-contain max-w-full max-h-full"
                         width={300} // Optional: Set a max width
                         height={300} // Optional: Set a max height
                     />
                 </div>
 
-                <div className="px-6 py-4 h-60">
-                    <p className="text-base text-wrap	text-justify">
+                <div className="px-6 py-4 h-60 overflow-y-scroll">
+                    <p className="text-justify text-ellipsis">
                         {children}
                     </p>
                 </div>
             </div>
 
             <footer className="px-6 py-4 flex justify-around ">
-                <IconLink url={props.webUrl} icon={Globe} className='stroke-fuchsia-700 stroke-2' />
-                <IconLink url={props.githubUrl} icon={Github} className='stroke-fuchsia-700 stroke-2' />
+                <IconLink url={props.webUrl} icon={Globe} className={iconClassname} />
+                <IconLink url={props.githubUrl} icon={Github} className={iconClassname} />
+                {!(props.webUrl || props.githubUrl) ? <Clock className={iconClassname} /> : ""}
             </footer>
         </div>
     );

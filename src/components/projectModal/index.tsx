@@ -10,7 +10,7 @@ export default function ProjectModal(props: { isOpen: boolean, images: string[],
     Modal.setAppElement("#home")
     return (
         <Modal className="m-10 p-5 bg-zinc-900 carousel-modal" isOpen={isOpen} >
-            <h1>{props.title}</h1>
+            <h1 className='text-3xl font-thin mt-3'>{props.title}</h1>
             <div className="carousel-wrapper">
 
                 <Carousel className='mt-5 mx-auto carousel'>
