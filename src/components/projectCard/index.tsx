@@ -3,6 +3,7 @@
 import React, { MouseEventHandler } from 'react';
 import Image from 'next/image'
 import { BiGlobe, BiLogoGithub, BiHourglass } from 'react-icons/bi';
+import IconLink from '../IconLink';
 
 
 export default function ProjectCard(props: {
@@ -52,13 +53,3 @@ export default function ProjectCard(props: {
         </div>
     );
 };
-
-function IconLink(props: { url?: string, className?: string, icon?: React.ComponentType<{ className?: string }> }) {
-    const { url, className, icon: Icon } = props;
-    if (url && Icon)
-        return (
-            <a href={url} target="_blank" rel="noopener noreferrer">
-                <Icon className={className} />
-            </a>
-        )
-}

@@ -4,8 +4,12 @@ import Logo from "../components/logo";
 import ProjectCard from "../components/projectCard/index";
 import { MouseEventHandler, useState } from 'react'
 import ProjectModal from "../components/projectModal/index";
-import { BiData, BiLogoGit, BiLogoNodejs } from "react-icons/bi";
-import { SiFirebase, SiNestjs, SiReact, SiTypescript, SiUnity } from "react-icons/si";
+import { BiData, BiLogoGit, BiLogoGithub, BiLogoNodejs, BiMailSend } from "react-icons/bi";
+import { SiFirebase, SiNestjs, SiReact, SiTypescript, SiUnity, SiWhatsapp } from "react-icons/si";
+import Technology from "@/components/Technology";
+import { SlSocialInstagram } from "react-icons/sl";
+import IconLink from "@/components/IconLink";
+import IconTextLink from "@/components/IconTextLink";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,6 +79,7 @@ export default function Home() {
   }
 
   const closeModal = () => setIsModalOpen(false)
+  const classIconLink = "text-amber-700 text-4xl m-auto"
 
   return (
     <div id="home" className="m-0 p-0 max-w-screen">
@@ -158,45 +163,44 @@ export default function Home() {
           Tecnologias
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-10/12 m-auto py-5 font-thin">
-          <div className="flex w-max mx-auto">
-            <BiLogoGit className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Conhecimentos em Git</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <BiLogoNodejs className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Desenvolvedor Fullstack Node Vanila</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <SiFirebase className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Conhecimentos em Firebase</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <BiData className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Conhecimentos em SQL</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <SiNestjs className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Noções em Nest</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <SiReact className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Noções em React</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <SiTypescript className="text-amber-700 text-3xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Noções em Typescript</p>
-          </div>
-          <div className="flex w-max mx-auto">
-            <SiUnity className="text-amber-700 text-4xl" />
-            <p className="text-xl ms-3 py-auto mx-auto">Desenvolvedor Unity</p>
-          </div>
-          
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-10/12 m-auto py-5 font-thin mb-10">
+          <Technology icon={BiLogoGit} name="Conhecimentos em Git" />
+          <Technology icon={BiLogoNodejs} name="Desenvolvedor Fullstack Node Vanila" />
+          <Technology icon={SiFirebase} name="Conhecimentos em Firebase" />
+          <Technology icon={BiData} name="Conhecimentos em SQL" />
+          <Technology icon={SiNestjs} name="Noções em Nest" />
+          <Technology icon={SiReact} name="Noções em React" />
+          <Technology icon={SiTypescript} name="Noções em Typescript" />
+          <Technology icon={SiUnity} name="Desenvolvedor Unity" />
         </div>
 
 
       </div>
+      <footer className="bg-zinc-800 h-full">
+        <h2 className="text-2xl lg:text-3xl font-thin py-5 text-center">Contatos</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2  ">
+          {/* <div className="w-full p-auto text-center"> */}
+          <IconTextLink
+            icon={BiLogoGithub} className={classIconLink}
+            url="https://github.com/SoaresVictor-vso" name="SoaresVictor-vso" />
+
+          <IconTextLink
+            icon={SlSocialInstagram} className={classIconLink}
+            url="https://instagram.com/svict.or_" name="svict.or_" />
+
+
+          <IconTextLink
+            icon={BiMailSend} className={classIconLink}
+            url="mailto:soaresvictor479@gmail.com" name="soaresvictor479@gmail.com" />
+
+          <IconTextLink
+            icon={SiWhatsapp} className={classIconLink}
+            url="mailto:soaresvictor479@gmail.com" name="WhatsApp" />
+
+          {/* </div> */}
+        </div>
+
+      </footer>
 
       <ProjectModal
         isOpen={isModalOpen}
