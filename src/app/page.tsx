@@ -8,7 +8,6 @@ import { BiData, BiLogoGit, BiLogoGithub, BiLogoNodejs, BiMailSend } from "react
 import { SiFirebase, SiNestjs, SiReact, SiTypescript, SiUnity, SiWhatsapp } from "react-icons/si";
 import Technology from "@/components/Technology";
 import { SlSocialInstagram } from "react-icons/sl";
-import IconLink from "@/components/IconLink";
 import IconTextLink from "@/components/IconTextLink";
 
 export default function Home() {
